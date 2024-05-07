@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "*"
+  namespace: istio-system
+spec:
+  template:
+    spec:
+      nodeSelector:
+        agentpool: systempool

@@ -1,0 +1,8 @@
+*.parquet
+*.pt
+*.mar
+notebooks/config.json
+.vscode/settings.json
+notebooks/manual_pipeline_files/cluster_configs/*
+*.bicepparam
+!infrastructure/deployment/azure/bicepparamexample.bicepparam

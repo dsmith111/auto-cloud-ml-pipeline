@@ -1,0 +1,7 @@
+apiVersion: "aadpodidentity.k8s.io/v1"
+kind: AzureIdentity
+metadata:
+  name: vmscalesetidentity
+spec:
+  resourceID: /subscriptions/{{SUBSCRIPTION_ID}}/resourcegroups/MC_{{RESOURCE_GROUP}}_{{CLUSTER_NAME}}_{{REGION}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{{CLUSTER_NAME}}-agentpool
+  clientID: {{CLIENT_ID}}

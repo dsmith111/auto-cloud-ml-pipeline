@@ -1,0 +1,16 @@
+pyspark
+torch
+torchvision
+torchaudio
+torchserve
+torch-model-archiver
+torch-workflow-archiver
+azure-data-tables
+azure-storage-file-datalake
+azure-identity
+scikit-learn
+pandas
+pyarrow
+numpy
+azure-mgmt-resource
+azure-mgmt-containerservice

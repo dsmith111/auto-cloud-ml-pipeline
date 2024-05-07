@@ -1,0 +1,27 @@
+apiVersion: "kubeflow.org/v1"
+kind: PyTorchJob
+metadata:
+  name: iris-torch-job
+  namespace: kubeflow
+spec:
+  pytorchReplicaSpecs:
+    Master:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            aadpodidbinding: <your-azure-identity-binding>
+        spec:
+          containers:
+          - name: pytorch
+            image: <your-pytorch-image>
+    Worker:
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            aadpodidbinding: <your-azure-identity-binding>
+        spec:
+          containers:
+          - name: pytorch
+            image: <your-pytorch-image>

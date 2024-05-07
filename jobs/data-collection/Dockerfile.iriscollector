@@ -1,0 +1,15 @@
+FROM apache/spark-py:latest
+
+# Install Python libraries
+USER root
+RUN pip install --no-cache-dir pandas pyarrow azure-identity azure-storage-file-datalake
+USER 185
+
+# Set the working directory
+WORKDIR /opt/spark/work-dir
+
+# Curl IRIS data to this directory https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv
+RUN curl -o iris.csv https://gist.githubusercontent.com/curran/a08a1080b88344b0c8a7/raw/0e7a9b0a5d22642a06d3d5b9bcbad9890c8ee534/iris.csv
+
+# Set the iris.csv file path as an environment variable
+ENV IRIS_CSV_PATH /opt/spark/work-dir/iris.csv

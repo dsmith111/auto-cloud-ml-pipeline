@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aad-pod-identity-test
+  labels:
+    aadpodidbinding: vmscalesetidentity
+spec:
+  containers:
+  - name: alpine
+    image: alpine
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do sleep 30; done;"

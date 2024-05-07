@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "*"
+  namespace: knative-eventing
+spec:
+  template:
+    spec:
+      nodeSelector:
+        agentpool: systempool

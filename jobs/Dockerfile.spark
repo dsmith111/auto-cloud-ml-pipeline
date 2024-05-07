@@ -1,0 +1,9 @@
+FROM apache/spark-py:latest
+
+# Install Python libraries
+USER root
+RUN pip install --no-cache-dir pandas pyarrow azure-identity azure-storage-file-datalake
+USER 185
+
+# Set the working directory
+WORKDIR /opt/spark/work-dir

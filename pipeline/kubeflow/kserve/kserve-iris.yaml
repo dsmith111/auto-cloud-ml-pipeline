@@ -1,0 +1,13 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "iris-model"
+  labels:
+    aadpodidbinding: "vmscalesetidentity"
+spec:
+  predictor:
+    serviceAccountName: "kserve-sa"
+    model:
+      modelFormat:
+        name: pytorch
+      storageUri: "<storage-uri>"

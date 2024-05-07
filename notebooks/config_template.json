@@ -1,0 +1,26 @@
+{
+    "account_url": "https://<account_name>.dfs.core.windows.net",
+    "account_name": "<account_name>",
+    "data_filesystem": "distributed-test-tabular",
+    "model_filesystem": "distributed-test-models",
+    "subscription_id": "<sub_id>",
+    "main_resource_group": "ai-infra-rg",
+    "image_repo": "mydockerrepo",
+    "iris_torch_job_name": "iris-torch-job",
+    "iris_torchserve_name": "iris-torchserve",
+    "cluster_names": [
+        "training-aks",
+        "serving-aks",
+        "spark-aks"
+    ],
+    "kf_serve_spn":{
+        "client_id": "<kf_client_id>",
+        "secret": "<kc_secret>",
+        "tenant_id": "<kf_tenant_id>"
+
+    },
+    "spark_spn":{
+        "client_id": "<spark_client_id>",
+        "tenant_id": "<spark_tenant_id>"
+    }
+}

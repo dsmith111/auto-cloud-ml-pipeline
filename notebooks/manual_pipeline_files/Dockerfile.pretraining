@@ -1,0 +1,16 @@
+FROM pytorch/pytorch:latest
+
+RUN pip install azure-storage-file-datalake azure-identity pyarrow pandas
+RUN pip install torch-model-archiver torch-workflow-archiver
+
+# Set the working directory
+WORKDIR /app
+
+# Copy your training script and other necessary files into the image
+COPY models/iris/training/iris_model_training.py /app/distributed_training.py
+COPY models/iris/iris_model_class.py /app/iris_model_class.py
+COPY models/iris/iris_dataset_class.py /app/iris_dataset_class.py
+COPY models/iris/serving/iris_model_serve_handler.py /app/iris_model_serve_handler.py
+
+# Set the entrypoint to run your training script
+ENTRYPOINT ["python", "distributed_training.py"]
